@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explainable AI Heatmap Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="simulator-card">
+    <header class="header">
+      <h1>Explainable AI Heatmap Simulator</h1>
+      <p class="subtitle">Inspect how computer vision models evaluate spatial hand gestures vs. shortcut cheats.</p>
+    </header>
+
+    <div class="mode-selector">
+      <button class="mode-btn" data-mode="raw">Raw Camera</button>
+      <button class="mode-btn" data-mode="shortcut">Shortcut Cheat</button>
+      <button class="mode-btn" data-mode="saliency">Saliency Map</button>
+      <button class="mode-btn" data-mode="cam">CAM Area</button>
+      <button class="mode-btn" data-mode="gradcam">Grad-CAM</button>
+      <button class="mode-btn active" data-mode="stacked">Stacked Ensemble</button>
+    </div>
+
+    <div class="env-bar">
+      <div class="env-label">Environment: <strong id="env-name">Office Wallpaper</strong></div>
+      <button id="switch-env-btn" class="secondary-btn">Switch Environment</button>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="simulator-canvas" width="600" height="380"></canvas>
+    </div>
+
+    <div class="status-card">
+      <div class="status-info">
+        <span class="status-label">MODEL FOCUS AREA</span>
+        <span id="focus-area" class="status-value">Finger Joints & Articulation</span>
+      </div>
+      <div id="status-badge" class="badge validated">VALIDATED FOCUS</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
